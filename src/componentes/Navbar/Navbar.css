@@ -3,26 +3,28 @@
   }
   
   .header_container {
-    max-width: 900px;
-    margin: 30px;
-    padding: 30px;
-  
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    }
+    width: 100%;
+  }
   
   .navbar {
       display: flex;
-      justify-content: center;
+      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
       gap: 16px;
+      padding: 15px 50px 15px 0;
     }
   
     .navbar_link {
      font-size: 20px;
      text-transform: uppercase;
-     cursor: help;
+     cursor: pointer;
      font-weight: 700;
      color: brown; 
+    }
+
+    .link-container {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
     }

@@ -5,7 +5,6 @@ const ItemListContainer = ({ greeting }) => {
     <div className="list-container">
       <h2 className="list-container_title">Eduardo A Bottegaro</h2>
       <hr />
-
       <p>{greeting}</p>
     </div>
   );
