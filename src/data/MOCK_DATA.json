@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "name": "Martillo",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
+      "price": 1500,
+      "categoria": "manuales",
+      "img": "https://via.placeholder.com/300"
+    },
+    {
+      "id": 2,
+      "name": "Amoladora",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
+      "price": 50000,
+      "categoria": "electricas",
+      "img": "https://via.placeholder.com/300"
+    },
+    {
+      "id": 3,
+      "name": "Destornillador",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
+      "price": 1500,
+      "categoria": "manuales",
+      "img": "https://via.placeholder.com/300"
+    },
+    {
+      "id": 4,
+      "name": "Torno",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
+      "price": 1500,
+      "categoria": "industriales",
+      "img": "https://via.placeholder.com/300"
+    },
+    {
+      "id": 5,
+      "name": "Serrucho",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
+      "price": 1500,
+      "categoria": "otros",
+      "img": "https://via.placeholder.com/300"
+    },
+    {
+      "id": 6,
+      "name": "Taladro de banco",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
+      "price": 1500,
+      "categoria": "industriales",
+      "img": "https://via.placeholder.com/300"
+    },
+    {
+      "id": 7,
+      "name": "Lija",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
+      "price": 1500,
+      "categoria": "otros",
+      "img": "https://via.placeholder.com/300"
+    },
+    {
+      "id": 8,
+      "name": "Caladora",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
+      "price": 50000,
+      "categoria": "electricas",
+      "img": "https://via.placeholder.com/300"
+    }
+  ]
