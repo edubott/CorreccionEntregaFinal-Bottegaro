@@ -4,19 +4,44 @@ import ItemDetail from "./componentes/ItemDetail/ItemDetail";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./index.css";
+import { CartContext } from "./context/CartContext";
+import { useState } from "react";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Navbar />
+  const [cart, setCart] = useState([]);
 
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/categoria/:id" element={<ItemListContainer />} />
-        <Route path="/item/:id" element={<ItemDetail />} />
-        <Route path="*" element={<Navigate to={"/"} />} />
-      </Routes>
-    </BrowserRouter>
+  const agregarAlCarrito = (producto) => {
+    setCart([...cart, producto]);
+  };
+
+  const isInCart = (id) => {
+    return cart.some((prod) => prod.id === id);
+  };
+
+  const totalCantidad = () => {
+    return cart.reduce((acc, prod) => acc + prod.cantidad, 0);
+  };
+
+  return (
+    <CartContext.Provider
+      value={{
+        cart,
+        agregarAlCarrito,
+        isInCart,
+        totalCantidad,
+      }}
+    >
+      <BrowserRouter>
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/categoria/:id" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetail />} />
+          <Route path="*" element={<Navigate to={"/"} />} />
+        </Routes>
+      </BrowserRouter>
+    </CartContext.Provider>
   );
 }
 

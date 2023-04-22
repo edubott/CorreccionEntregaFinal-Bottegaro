@@ -1,13 +1,26 @@
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { pedirDatos } from "../../helpers/pedirDatos";
 import Spinner from "../Spinner/Spinner";
+import ItemCount from "../ItemCount/ItemCount";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = () => {
+  const { agregarAlCarrito, isInCart } = useContext(CartContext);
+
+  const [cantidad, setCantidad] = useState(1);
   const { id } = useParams();
   const [producto, setProducto] = useState(null);
   const [loading, setloading] = useState(true);
   const navigate = useNavigate();
+  console.log(producto);
+  const handleAgregar = () => {
+    const newProducto = {
+      ...producto,
+      cantidad,
+    };
+    agregarAlCarrito(newProducto);
+  };
 
   useEffect(() => {
     pedirDatos()
@@ -47,11 +60,26 @@ const ItemDetail = () => {
           <h5>$ {producto.price}</h5>
           <h3>Categoria</h3>
           <h5>{producto.categoria}</h5>
+          <h3>Stock</h3>
+          <h5>{producto.stock - cantidad}</h5>
         </div>
         <div>
           <img alt="producto" src={producto.img} />
         </div>
       </div>
+
+      {isInCart(producto.id) ? (
+        <Link to="/cart" className="btn btn-success">
+          Terminar mi compra
+        </Link>
+      ) : (
+        <ItemCount
+          max={producto.stock}
+          cantidad={cantidad}
+          setCantidad={setCantidad}
+          agregar={handleAgregar}
+        />
+      )}
     </div>
   ) : null;
 };

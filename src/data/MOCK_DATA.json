@@ -5,7 +5,8 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
       "price": 1500,
       "categoria": "manuales",
-      "img": "https://via.placeholder.com/300"
+      "img": "https://via.placeholder.com/300",
+      "stock": "5"
     },
     {
       "id": 2,
@@ -13,7 +14,8 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
       "price": 50000,
       "categoria": "electricas",
-      "img": "https://via.placeholder.com/300"
+      "img": "https://via.placeholder.com/300",
+      "stock": "29"
     },
     {
       "id": 3,
@@ -21,7 +23,8 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
       "price": 1500,
       "categoria": "manuales",
-      "img": "https://via.placeholder.com/300"
+      "img": "https://via.placeholder.com/300",
+      "stock": "7"
     },
     {
       "id": 4,
@@ -29,7 +32,8 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
       "price": 1500,
       "categoria": "industriales",
-      "img": "https://via.placeholder.com/300"
+      "img": "https://via.placeholder.com/300",
+      "stock": "16"
     },
     {
       "id": 5,
@@ -37,7 +41,8 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
       "price": 1500,
       "categoria": "otros",
-      "img": "https://via.placeholder.com/300"
+      "img": "https://via.placeholder.com/300",
+      "stock": "8"
     },
     {
       "id": 6,
@@ -45,7 +50,8 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam non nisi est sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.",
       "price": 1500,
       "categoria": "industriales",
-      "img": "https://via.placeholder.com/300"
+      "img": "https://via.placeholder.com/300",
+      "stock": "3"
     },
     {
       "id": 7,
