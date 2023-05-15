@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 export const CartPage = () => {
-  const { cart } = useContext(CartContext);
-
-  if (cart && totalCantidad > 0) {
+  const { cart, totalCantidad } = useContext(CartContext);
+  console.log(cart, totalCantidad);
+  if (cart && totalCantidad() > 0) {
     return (
       <div>
         {cart.map((item) => (

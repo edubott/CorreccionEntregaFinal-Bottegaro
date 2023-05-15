@@ -7,6 +7,7 @@ import "./index.css";
 import { CartContext } from "./context/CartContext";
 import { useState } from "react";
 import { CartPage } from "./componentes/CartPage/CartPage";
+import LoginScreen from "./componentes/LoginScreen/LoginScreen";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -45,6 +46,7 @@ function App() {
           <Route path="/item/:id" element={<ItemDetail />} />
           <Route path="*" element={<Navigate to={"/"} />} />
           <Route path="/carrito" element={<CartPage />} />
+          <Route path="/login" element={<LoginScreen />} />
         </Routes>
       </BrowserRouter>
     </CartContext.Provider>

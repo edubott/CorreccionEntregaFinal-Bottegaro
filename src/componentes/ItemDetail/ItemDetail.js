@@ -68,18 +68,12 @@ const ItemDetail = () => {
         </div>
       </div>
 
-      {isInCart(producto.id) ? (
-        <Link to="/cart" className="btn btn-success">
-          Terminar mi compra
-        </Link>
-      ) : (
-        <ItemCount
-          max={producto.stock}
-          cantidad={cantidad}
-          setCantidad={setCantidad}
-          agregar={handleAgregar}
-        />
-      )}
+      <ItemCount
+        max={producto.stock}
+        cantidad={cantidad}
+        setCantidad={setCantidad}
+        agregar={handleAgregar}
+      />
     </div>
   ) : null;
 };
