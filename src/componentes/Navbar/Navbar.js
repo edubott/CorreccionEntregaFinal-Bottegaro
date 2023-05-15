@@ -77,7 +77,9 @@ export const Navbar = () => {
                   {categoria.name}
                 </Link>
               ))}
-              <CartWidget color={"lightgray"} />
+              <Link to={"/carrito"}>
+                <CartWidget color={"lightgray"} />
+              </Link>
             </ul>
           </div>
         </div>

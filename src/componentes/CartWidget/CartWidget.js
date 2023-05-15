@@ -3,11 +3,11 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
 export const CartWidget = ({ color }) => {
-  const { cart } = useContext(CartContext);
+  const { totalCantidad } = useContext(CartContext);
 
   return (
     <p className="navbar_link">
-      <span style={{ color: "white" }}>{cart.length}</span>
+      <span style={{ color: "white" }}>{totalCantidad()}</span>
 
       <svg
         style={{ cursor: "pointer" }}

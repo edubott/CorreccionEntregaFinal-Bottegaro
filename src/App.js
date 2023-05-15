@@ -6,12 +6,17 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./index.css";
 import { CartContext } from "./context/CartContext";
 import { useState } from "react";
+import { CartPage } from "./componentes/CartPage/CartPage";
 
 function App() {
   const [cart, setCart] = useState([]);
-
+  console.log(cart);
   const agregarAlCarrito = (producto) => {
-    setCart([...cart, producto]);
+    if (isInCart(producto.id)) {
+      /*TODO: Actualizar el "cantidad" del producto existente*/
+    } else {
+      setCart([...cart, producto]);
+    }
   };
 
   const isInCart = (id) => {
@@ -39,6 +44,7 @@ function App() {
           <Route path="/categoria/:id" element={<ItemListContainer />} />
           <Route path="/item/:id" element={<ItemDetail />} />
           <Route path="*" element={<Navigate to={"/"} />} />
+          <Route path="/carrito" element={<CartPage />} />
         </Routes>
       </BrowserRouter>
     </CartContext.Provider>
