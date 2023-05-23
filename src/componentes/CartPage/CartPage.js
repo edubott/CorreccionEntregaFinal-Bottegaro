@@ -3,7 +3,7 @@ import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 export const CartPage = () => {
-  const { cart, totalCantidad } = useContext(CartContext);
+  const { cart, totalCantidad, vaciarCarrito } = useContext(CartContext);
 
   if (cart && totalCantidad() > 0) {
     return (
@@ -14,6 +14,9 @@ export const CartPage = () => {
             <span>{item.name}</span>
           </div>
         ))}
+
+        <button onClick={vaciarCarrito}>Vaciar carrito</button>
+
         <Link to={`/checkout`}>Comprar</Link>
       </div>
     );
