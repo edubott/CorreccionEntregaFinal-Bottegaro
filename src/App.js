@@ -12,7 +12,7 @@ import CheckoutScreen from "./componentes/CheckoutScreen/CheckoutScreen";
 
 function App() {
   const [cart, setCart] = useState([]);
- }
+
   const agregarAlCarrito = (producto) => {
     if (isInCart(producto.id)) {
       /*TODO: Actualizar el "cantidad" del producto existente*/
