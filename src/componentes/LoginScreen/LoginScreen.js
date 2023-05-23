@@ -25,26 +25,8 @@ const LoginScreen = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console, log(values);
-  };
-  /*const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const handleInput = (e) => {
-    console.log(e);
-  };
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log(email);
-    console.log(password);
-  };*/
   return (
     <div className="login-container">
       <div className="login">

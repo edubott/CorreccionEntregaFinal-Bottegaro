@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { pedirDatos } from "../../helpers/pedirDatos";
 import Spinner from "../Spinner/Spinner";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = () => {
-  const { agregarAlCarrito, isInCart } = useContext(CartContext);
+  const { agregarAlCarrito } = useContext(CartContext);
 
   const [cantidad, setCantidad] = useState(1);
   const { id } = useParams();
