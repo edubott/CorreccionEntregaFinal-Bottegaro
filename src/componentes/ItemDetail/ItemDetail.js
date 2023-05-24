@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { pedirDatos } from "../../helpers/pedirDatos";
+
 import Spinner from "../Spinner/Spinner";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../../context/CartContext";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 const ItemDetail = () => {
   const { agregarAlCarrito } = useContext(CartContext);
@@ -13,7 +15,7 @@ const ItemDetail = () => {
   const [producto, setProducto] = useState(null);
   const [loading, setloading] = useState(true);
   const navigate = useNavigate();
-  console.log(producto);
+
   const handleAgregar = () => {
     const newProducto = {
       ...producto,
@@ -23,32 +25,22 @@ const ItemDetail = () => {
   };
 
   useEffect(() => {
-    pedirDatos()
-      .then((response) => {
-        const productoFiltrado = response.find(
-          (producto) => producto.id === Number(id)
-        );
-
-        if (productoFiltrado) {
-          setProducto(productoFiltrado);
-        } else {
-          navigate("/");
+    setloading(true);
+    const docRef = doc(db, "productos", id);
+    getDoc(docRef)
+      .then((doc) => {
+        if (doc.exists()) {
+          setProducto({ id: doc.id, ...doc.data() });
         }
-        setloading(false);
       })
-
-      .catch((error) => {
-        console.log(error);
-        setloading(false);
-      })
-      .finally(() => {
-        setloading(false);
-      });
+      .finally(() => setloading(false));
   }, [navigate, id]);
 
-  return loading ? (
-    <Spinner />
-  ) : producto ? (
+  if (loading) {
+    return <Spinner />;
+  }
+
+  return producto ? (
     <div className="container my-5">
       <div className="d-flex ">
         <div>
@@ -75,7 +67,9 @@ const ItemDetail = () => {
         agregar={handleAgregar}
       />
     </div>
-  ) : null;
+  ) : (
+    <div>Producto no encontrado</div>
+  );
 };
 
 export default ItemDetail;

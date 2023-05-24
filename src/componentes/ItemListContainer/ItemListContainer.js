@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { pedirDatos } from "../../helpers/pedirDatos.js";
+
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList.js";
-
+import { collection, getDocs } from "firebase/firestore";
 import "./ItemListContainer.css";
 import Spinner from "../Spinner/Spinner.js";
+import { db } from "../../firebase/config.js";
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
@@ -13,24 +14,19 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setloading(true);
-    pedirDatos()
-      .then((response) => {
-        const productosFiltrados = response.filter(
-          (producto) => producto.categoria === id
-        );
-        if (!id || id === "home") {
-          setProductos(response);
-        } else if (productosFiltrados.length > 0) {
-          setProductos(productosFiltrados);
-        } else {
-          setProductos(response);
-        }
 
-        setloading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setloading(false);
+    const productosRef = collection(db, "productos");
+    getDocs(productosRef)
+      .then((res) => {
+        const allProductos = res.docs.map((doc) => {
+          return { id: doc.id, ...doc.data() };
+        });
+
+        const displayProductos = id
+          ? allProductos.filter((producto) => producto.categoria === id)
+          : allProductos;
+
+        setProductos(displayProductos);
       })
       .finally(() => {
         setloading(false);
